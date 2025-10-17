@@ -1,29 +1,32 @@
-// Populate the page from a single data object so it’s easy to tweak.
 const DATA = {
-  title: 'SkrobalaM', // from your sketch (edit as needed)
+  title: 'SkrobalaM',
   stack: ['C', 'CUDA', 'VHDL', 'Python', 'React Native'],
   projects: [
     {
       label: 'Ascii Shader',
       img: 'images/shader.png',
       desc: 'ASCII shader running on the GPU using CUDA and C. It maps downscaled pixel luminance from a video to ASCII characters.',
+      github: 'https://github.com/SkrobalaM/ascii-shader',
       href: ''
     },
     {
       label: 'DES on Logisim',
       img: 'images/DES.png',
       desc: 'Implementation of the Data Encryption Standard (DES) using digital logic blocks in Logisim, simulating real wire connections. This project showcases key scheduling and the standard DES encryption rounds—originally developed at IBM and standardized by NIST.',
+      github: 'https://github.com/SkrobalaM/DES_Logisim',
       href: ''
     },
     {
       label: 'SionnaRT guide',
       img: 'images/SionnaRT.png',
       desc: 'Guide to getting started with the SionnaRT library for wireless simulations, performing ray tracing on a custom 3D map built from OpenStreetMap data.',
+      github: 'https://github.com/SkrobalaM/SionnaRT_guide',
       href: ''
     },
     {
       label: 'Berghain challenge by ListenLab',
       desc: 'Challenge brief:\nYou are the bouncer at a nightclub. Fill the venue with N=1000 people while satisfying constraints like "at least 40% Berlin locals" and "at least 80% wearing all black." People arrive one by one, and you must immediately decide whether to let them in or turn them away. The challenge is to meet all minimum requirements with as few rejections as possible.\n\nThis project uses stochastic decisions to find an optimal solution based on constraints, initial probabilities, and correlations.\n\nFinal ranking achieved: 68/1330.',
+      github: 'https://github.com/SkrobalaM/Berghain_Challenge',
       href: ''
     },
   ],
@@ -87,6 +90,11 @@ function renderList(list, targetId) {
         details.appendChild(img);
       }
       if (item.desc) details.appendChild(el('p', { class: 'project-desc' }, item.desc));
+      if (item.github) {
+        details.appendChild(
+          el('a', { class: 'project-link', href: item.github, target: '_blank', rel: 'noopener' }, 'View on GitHub')
+        );
+      }
 
       toggle.addEventListener('click', () => {
         const isOpen = wrapper.classList.toggle('open');

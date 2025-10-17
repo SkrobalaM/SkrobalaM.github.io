@@ -120,6 +120,8 @@ body{
 .project-body{flex:1}
 .project-title{font-weight:500;font-size:20px}
 .project-desc{margin:6px 0 0 0;color:var(--muted);white-space:pre-line}
+.project-link{display:inline-block;margin-top:8px;color:var(--accent);border-bottom:1px dashed var(--accent);text-decoration:none}
+.project-link:hover{opacity:.9}
 
 /* Collapsible details */
 .project-toggle{
