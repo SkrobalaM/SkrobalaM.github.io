@@ -1,0 +1,163 @@
+/* Minimal, typographic layout matching the sketch */
+:root{
+	--bg:#0b0c10;--text:#e7e8ea;
+	--muted:#a3a6ad;
+	--line:#1e222a;
+	--accent:#d1d5db;
+	--header-h:160px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	background:var(--bg);
+	color:var(--text);
+	font-family: 'IBM Plex Mono', monospace;
+	font-size:18px;
+	line-height:1.6
+}
+.container{
+	max-width:1100px;
+	margin:0 auto;
+	padding:28px
+}
+
+/* Header */
+.site-header{
+	border-bottom:1px solid var(--line);
+	position:fixed;
+	top:0;left:0;right:0;
+	z-index:1000;
+	background:rgba(0,0,0,.7);
+	backdrop-filter:saturate(140%) blur(8px)
+}
+.site-header .container{
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	gap:16px
+}
+#siteTitle{margin:0;font-size:34px;letter-spacing:.2px}
+.brand{display:flex;align-items:center;gap:12px}
+.avatar{
+	width:120px;
+	height:120px;
+	border-radius:50%;
+	object-fit:cover;
+	border:1px solid var(--line)
+}
+#siteTitle{
+	margin:0;
+	font-size:34px;
+	letter-spacing:.2px
+}
+.stack{
+	list-style:none;
+	display:flex;
+	gap:10px;
+	margin:0;
+	padding:0;
+	flex-wrap:wrap
+}
+.stack li{
+	border:1px solid var(--line);
+	padding:6px 10px;
+	border-radius:999px;
+	color:var(--muted)
+}
+
+/* Sections */
+.block{padding:24px 0}
+.block h2{
+	margin:0 0 12px 0;
+	font-size:22px
+}
+
+/* Tree list to echo the sketch “L” bullets */
+.tree{
+	list-style:none;
+	margin:0;
+	padding:0 0 0 14px;
+	border-left:2px solid var(--line);
+	margin-left: 18px
+}
+.tree li{
+	position:relative;
+	padding:6px 0 6px 10px;
+}
+.tree li::before{
+	content:"";
+	position:absolute;
+	left:-14px;
+	top:18px;
+	width:14px;
+	height:2px;
+	background:var(--line)
+}
+.tree a{
+	color:var(--text);
+	text-decoration:none;
+	border-bottom:1px dashed transparent
+}
+.tree a:hover{
+	border-bottom-color:var(--accent)
+}
+.tree .meta{
+	color:var(--muted)
+}
+
+/* Project item layout */
+.project{display:block}
+.project-thumb{
+	width:100%;
+	max-width:560px;
+	height:auto;
+	object-fit:cover;
+	border:1px solid var(--line);
+	border-radius:8px;
+	background:#111
+}
+.project-body{flex:1}
+.project-title{font-weight:500;font-size:20px}
+.project-desc{margin:6px 0 0 0;color:var(--muted);white-space:pre-line}
+
+/* Collapsible details */
+.project-toggle{
+	all:unset;
+	display:inline-flex;
+	align-items:center;
+	gap:8px;
+	cursor:pointer
+}
+.project-toggle:after{
+	content:"▸";
+	font-size:12px;
+	color:var(--muted);
+	margin-left:6px;
+	transition:transform .2s ease
+}
+.project.open .project-toggle:after{transform:rotate(90deg)}
+.project-toggle:hover .project-title{border-bottom:1px dashed var(--accent)}
+.toggle-hint{
+	font-size:11px;
+	color:var(--muted);
+	border:1px dashed var(--line);
+	border-radius:999px;
+	padding:2px 6px
+}
+.project-details{display:none;padding:8px 0 0 0}
+.project.open .project-details{display:block}
+.project-details-row{display:block}
+
+/* Footer */
+.site-footer{
+	border-top:1px solid var(--line);
+	padding-top:16px;
+	color:var(--muted)
+}
+
+@media (max-width:600px){
+	#siteTitle{font-size:26px}
+	body{font-size:16px}
+	.container{padding:22px}
+}

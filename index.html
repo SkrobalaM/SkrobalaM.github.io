@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/pp.png" type="image/png" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="brand">
+        <img src="images/pp.png" alt="Profile picture" class="avatar" />
+        <h1 id="siteTitle">Your Title</h1>
+      </div>
+      <ul id="techStack" class="stack" aria-label="Tech stack"></ul>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top: var(--header-h);">
+    <section aria-labelledby="projects-title" class="block">
+      <h2 id="projects-title">Projects</h2>
+      <ul id="projects" class="tree"></ul>
+    </section>
+
+    <section aria-labelledby="wip-title" class="block">
+      <h2 id="wip-title">Working on</h2>
+      <ul id="wip" class="tree"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <small id="copyright">© <span id="year"></span></small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
