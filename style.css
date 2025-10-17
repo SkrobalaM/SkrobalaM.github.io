@@ -13,7 +13,8 @@ body{
 	color:var(--text);
 	font-family: 'IBM Plex Mono', monospace;
 	font-size:18px;
-	line-height:1.6
+	line-height:1.6;
+	padding-top:var(--header-h)
 }
 .container{
 	max-width:1100px;

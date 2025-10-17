@@ -128,3 +128,15 @@ DATA.stack.forEach(s => stack.appendChild(el('li', {}, s)));
 
 renderList(DATA.projects, 'projects');
 renderList(DATA.working, 'wip');
+
+
+function updateHeaderOffset(){
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+  const h = header.getBoundingClientRect().height;
+  document.documentElement.style.setProperty('--header-h', `${Math.ceil(h)}px`);
+}
+window.addEventListener('load', updateHeaderOffset);
+window.addEventListener('resize', updateHeaderOffset);
+// Small delay in case fonts load late and change height
+setTimeout(updateHeaderOffset, 100);
