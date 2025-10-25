@@ -1,6 +1,6 @@
 const DATA = {
   title: 'SkrobalaM',
-  stack: ['C', 'CUDA', 'VHDL', 'Python', 'React Native'],
+  stack: ['C', 'CUDA', 'VHDL', 'Python', 'React Native', 'ESP32', 'Arduino', 'WebSocket'],
   projects: [
     {
       label: 'Ascii Shader',
@@ -27,6 +27,13 @@ const DATA = {
       label: 'Berghain challenge by ListenLab',
       desc: 'Challenge brief:\nYou are the bouncer at a nightclub. Fill the venue with N=1000 people while satisfying constraints like "at least 40% Berlin locals" and "at least 80% wearing all black." People arrive one by one, and you must immediately decide whether to let them in or turn them away. The challenge is to meet all minimum requirements with as few rejections as possible.\n\nThis project uses stochastic decisions to find an optimal solution based on constraints, initial probabilities, and correlations.\n\nFinal ranking achieved: 68/1330.',
       github: 'https://github.com/SkrobalaM/Berghain_Challenge',
+      href: ''
+    },
+    {
+      label: 'ESP32 Speech-to-Text',
+      img: 'images/microphone_wiring.png',
+      desc: 'Real-time speech-to-text solution using ESP32 microcontroller with I2S microphone, Python WebSocket server, and Google Cloud Speech-to-Text API. The system streams audio from the ESP32 to a local server for cloud-based transcription, eliminating the need for local memory storage on the microcontroller.\n\nFeatures:\n• I2S microphone integration on ESP32\n• Real-time audio streaming via WebSocket\n• Google Cloud Speech-to-Text API integration\n• Interim and final transcription results\n• Wi-Fi connectivity for remote operation',
+      github: 'https://github.com/SkrobalaM/ESP32_speech_to_text',
       href: ''
     },
   ],
